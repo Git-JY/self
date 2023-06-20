@@ -1,0 +1,175 @@
+html {
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+}
+
+img {
+  vertical-align: middle;
+}
+
+header > div {
+  width: 1470px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header > div nav {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header > div nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+header > div h2 {
+  width: 20%;
+}
+
+footer {
+  height: 260px;
+}
+
+section {
+  width: 100vw;
+  margin: auto;
+}
+section .banner {
+  width: 100%;
+  height: 18vw;
+  background: url(./img/img_banner.jpg) center center/100% 100% no-repeat scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .banner h2 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 70px;
+  font-weight: 400px;
+  font-style: italic;
+}
+section .menu {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 157px;
+}
+section .menu .mainText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 150px;
+}
+section .menu .mainText h2 {
+  width: 100%;
+  font-size: 30px;
+}
+section .menu .mainText div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 58px;
+}
+section .menu .mainText div:after {
+  content: "";
+  width: 98px;
+  border-top: 1px solid black;
+}
+section .menu .mainText span {
+  width: 100%;
+  font-size: 16px;
+}
+section .menu .imgs {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+section .menu .imgs figure {
+  width: 20%;
+}
+section .menu .imgs figure p {
+  margin-bottom: 38px;
+}
+section .menu .imgs figure p img {
+  width: 100%;
+}
+section .memberShip {
+  width: 100%;
+  height: 41vw;
+  min-height: 788px;
+  background: url(./img/img_memberShipBack.jpg) center center/100% 100% no-repeat scroll;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 16%;
+}
+section .memberShip .memberShip_group .text {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  color: #302C2D;
+  margin-bottom: 65px;
+}
+section .memberShip .memberShip_group .text b {
+  font-size: 35px;
+  font-weight: bold;
+}
+section .memberShip .memberShip_group .text b span {
+  color: #D91226;
+}
+section .memberShip .memberShip_group .text p {
+  white-space: pre-line;
+  font-size: 20px;
+}
+section .memberShip .memberShip_group .icon_exs {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+section .memberShip .memberShip_group .icon_exs figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section .memberShip .memberShip_group .icon_exs figure:nth-of-type(1) > p {
+  background: #ffffff url("./img/icon_Hollys_1.png") center center/50% no-repeat scroll;
+}
+section .memberShip .memberShip_group .icon_exs figure:nth-of-type(2) > p {
+  background: #ffffff url("./img/icon_Hollys_2.png") center center/50% no-repeat scroll;
+}
+section .memberShip .memberShip_group .icon_exs figure:nth-of-type(3) > p {
+  background: #ffffff url("./img/icon_Hollys_3.png") center center/50% no-repeat scroll;
+}
+section .memberShip .memberShip_group .icon_exs figure p {
+  width: 172px;
+  height: 172px;
+  border: 3px solid #7A7A7A;
+  border-radius: 100px;
+  box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+section .memberShip .memberShip_group .icon_exs figure figcaption b {
+  color: #444;
+  font-size: 20px;
+}
+section .memberShip .memberShip_group .icon_exs figure figcaption span {
+  font-size: 18px;
+  color: #6E6E6E;
+  white-space: pre-line;
+}/*# sourceMappingURL=self.css.map */

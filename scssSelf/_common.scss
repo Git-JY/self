@@ -1,0 +1,34 @@
+//common.scss 
+// 아래와 같은 공통 사항, 다중 페이지 공통 스타일은 common.scss파일로 따로 만들어 주는 게 좋음
+
+// 풋터, 버튼, 색상
+// 콘텐츠(컴포넌트)
+
+// ---------- header ---------- 
+header{
+    >div{
+        width: 1470px;
+        margin: 0 auto;
+        @include flex(space-between, center);
+        // text-align: center;
+
+        nav{
+            width:40%; 
+            @include flex(space-around);
+
+            a{
+                text-decoration: none;
+                color: black;
+                font-size: 20px;
+            }//a
+        }//nav
+        h2{
+            width: 20%;
+        }//h2
+    }//div
+}//header
+
+// ---------- footer ---------- 
+footer{
+    height: 260px;
+}//footer

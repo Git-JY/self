@@ -1,0 +1,164 @@
+@import "_reset";
+@import "_media";
+
+// @import "_common"; 
+//이렇게 위에 쓰면 @mixin flex 위에 임포트되서, 
+//_common.scss 파일에 써진 @include flex()를 인식못함 @mixin 아래에다 써주삼
+@mixin flex($x: center, $y: center){
+    display: flex; justify-content: $x; align-items: $y;
+    @content;
+}
+
+@import "_common"; //header, footer
+
+// ---------- section ---------- 
+section{    
+    width: 100vw; //width: 1922px;
+    //height: 127.6vw;
+    margin: auto;
+    // --- banner ---
+    .banner{
+        width: 100%; height: 18vw; //height: 347px;
+        background: url(./img/img_banner.jpg) center center / 100% 100% no-repeat scroll;
+        @include flex();
+        h2{
+            color: rgba(255, 255, 255,0.8);
+            font-size: 70px; font-weight: 400px; font-style: italic;
+        }
+    }// banner
+
+    // --- menu --- 
+    .menu{
+        text-align: center;
+        margin-top: 150px; margin-bottom: 157px; 
+        
+        .mainText{
+            @include flex(){flex-wrap: wrap;};
+            margin-bottom:  150px;
+            h2{
+                width: 100%; font-size: 30px;
+            }
+            div{//선
+                    @include flex();
+                    width: 100%; height: 58px;
+
+                    &:after{
+                        content: '';
+                        width: 98px;
+                        border-top: 1px solid black;
+                    }
+                }
+            span{
+                width: 100%; font-size: 16px;
+            }              
+         }//mainText
+
+         .imgs{
+             @include flex(space-evenly, center);            
+             figure{
+                 width: 20%;
+                 p{
+                     img{
+                         width: 100%;
+                     }
+                     margin-bottom: 38px;
+                 }
+                 figcaption{
+                 }
+             }//figure
+             
+         }//.imgs
+
+    }// menu       
+    
+    // --- memberShip ---  
+    .memberShip{
+        width: 100%; height: 41vw; 
+        min-height: 788px;
+        // border: 1px solid rgba(255, 255, 255,0); 
+        // margin은 부모의 첫번째 자식에게 줄 경우, 부모를 벋어나서 margin을 주는 경우가 허다함
+        //     ->그냥 부모에 padding으로 주삼
+        background: url(./img/img_memberShipBack.jpg) center center / 100% 100% no-repeat scroll;
+
+        //padding: 137px 320px 80px 910px; //px보다는 %주삼(유동적인 게 좋음)
+        @include flex(end); 
+        padding-right: 16%; // padding-right: 320px; 
+        
+        .memberShip_group{
+            // margin: 137px 320px 80px 910px; //float: right;           
+            .text{
+                @include flex(start, start){flex-wrap: wrap;};
+                color: #302C2D;
+                b{
+                    // width: 100%; //난 부모너비 맞추려하고 부모는 자식너비 맞추려하니 생긴 에러
+                    font-size: 35px;
+                    font-weight: bold;
+                    span{
+                        color: #D91226;
+                    }
+                }
+                p{
+                    white-space: pre-line;
+                    font-size: 20px;
+                }
+                margin-bottom: 65px;
+            }//.text
+    
+            
+            .icon_exs{
+                text-align: center;
+                @include flex(space-between, start);
+                figure{
+                    @include flex(){flex-direction: column;}; 
+                   
+                    // 배열처럼 저장하는 방식
+                    // $icons : (icon_Hollys_1, icon_Hollys_2, icon_Hollys_3);
+                    // // nth($배열, 인덱스번호(1부터 시작)): 해당값 불러줌
+                    // &:nth-of-type(2) > p{ 
+                    //     background: #ffffff url('./img/#{nth($icons,3)}.png') center center / 50% no-repeat scroll;
+                    // }
+
+                    $icons : (1:icon_Hollys_1, 2:icon_Hollys_2, 3:icon_Hollys_3);
+
+                    // @each $n1, $n2 in $배열{}: 
+                    // foreach처럼 배열의 각각의 
+                    // 첫번째 내용, 두번째 내용이 들어가서 나옴
+
+                    @each $number, $name in $icons{ 
+                        // #{}: 변수와 문자열을 연결해주는 문법
+                        &:nth-of-type(#{$number}) > p{ //내부 사진
+                            background: #ffffff url('./img/#{$name}.png') center center / 50% no-repeat scroll;
+                        }
+                    }                   
+
+                    p{
+                        width: 172px; height: 172px;
+                        border: 3px solid #7A7A7A; border-radius: 100px;
+                        
+                        box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.2);
+                        margin-bottom: 20px;
+
+                    }//p
+                    figcaption{
+                        b{
+                            color: #444;
+                            font-size: 20px;
+                        }
+                        span{
+                            font-size: 18px; color: #6E6E6E;
+                            white-space: pre-line;
+                        }
+                    }//figcaption
+
+                }//figure
+            }//.icon_exs
+
+        }//.memberShip_group
+    }//.memberShip
+
+
+
+}//section
+
+// @import "_m-self"; //"_m-self.scss"파일 아직 안 만들어서 주석처리함
+

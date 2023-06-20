@@ -1,0 +1,32 @@
+// $mobile: 480px;
+// $mobile: (480px, 768px);
+// ↑ 이 두 방법도 쓰이고 있음
+
+// '값'뿐만 아니라 -> '속성: 값' 이런식으로도 쓰기 가능
+$mobile : ('max-width: 480px', 'max-width: 768px'); //(o) 이런식으로 써야함
+// $mobile : (max-width: 480px, max-width: 768px); (x) 키: 값으로 인식
+
+$tablet : ('min-width: 767px', 'max-width: 900px');
+
+// $pc : 'min-width: 1280px';
+$pc : ('min-width: 1280px'); // 통일성을 위해 이렇게 써도 됨
+
+@mixin device($dp){
+    @media ($dp){
+        @content;
+    }
+}
+
+//media쿼리는 큰놈부터 작은놈 순대로 쓰기
+// @include device(nth($mobile,2)){   
+//     body{background-color: green;}
+// }
+// @include device(nth($mobile,1)){   
+//     body{background-color: red;}
+// }
+
+
+
+
+
+

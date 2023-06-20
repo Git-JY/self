@@ -1,0 +1,24 @@
+html{font-size: 16px;}
+*{
+    // 여기 너무 많이 넣으면 브라우저가 전부 이거 넣느라 힘들어함(최적화하기 위해 최소화 하삼)
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+
+body{font-family: 'Segoe UI', sans-serif;}
+h1,h2,p,figure{}
+ul,li,ol{}
+
+table{}
+a{}
+img{
+    vertical-align: middle;
+}
+
+input,textarea{}
+button{}
+select{}
+
+
+
+
